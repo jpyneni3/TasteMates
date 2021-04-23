@@ -1,0 +1,49 @@
+/* #map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  font-family: sans-serif;
+} */
+
+
+
+.city-limits {
+  stroke: white;
+  stroke-width: 2;
+}
+/* 0491a8 */
+.neighborhoods {
+  fill: #b8d4e4;
+  stroke: white;
+  stroke-width: 1;
+}
+
+
+.d3-tip {
+         box-sizing: border-box;
+         background: gray;
+         color: #fff;
+         border-radius: 2px;
+         padding: 8px;
+         position: absolute;
+    }
+
+
+#map {
+    width: 150px;
+    height:150px;
+    background: white;
+    font-family: sans-serif;
+}
+#infographic {
+  width:100%;
+  height:150px;
+  padding: 1.5em;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0px;
+}
