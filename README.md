@@ -1,10 +1,10 @@
 # TasteMates
 User Recommendation System from Yelp Dataset
 
-##Data 
+## Data
 
-##DESCRIPTION
+## DESCRIPTION
 
-##INSTALLATION
+## INSTALLATION
 
-##EXECUTION
+## EXECUTION
