@@ -10,6 +10,8 @@ User Recommendation System from Yelp Dataset
 
 ## DESCRIPTION (Describe the package in a few paragraphs)
 ### NLP
+This package is contained in the /nlp directory. All code for analyzing textual review data is within  Reviews_NLP_and_Embeddings.ipynb. The package contains data loading and formatting cells to group by either business id or user id. This notebook generates files for textual user similarity and sorted lists of hotwords for download and use in the generation of word clouds in our API. The code is split into 3 blocks for data loading and imports, top-n textual user similarity, and a hotword extractor for restaurant reviews. This package uses the spaCy and NLTK python frameworks for NLP and automatically downloads the appropriate small English language model and PUNKT tokenizer model as dependencies of the bag-of-words token embedding, frequency analysis, and constituency parsing functionalities over cumulative review data.
+
 ### Content-Based Filtering for Recommending Restaurants
 This package is contained within the /recommenders directory. All code for the recommender is within Content_Based_Filtering.ipynb. This package contains methods to get recommended restaurants given a specific restaurant id and to get recommended restaurants given a specific user_id. This recommender system is already connected to the Visualizations, therefore this notebook is only useful to test the standalone restaurant recommender. More information on how to reproduce results in shown below.
 
@@ -24,6 +26,7 @@ This package is contained within the /viz directory. There are three components 
 
 ## INSTALLATION (How to install and setup your code)
 ### NLP
+This code is dependant on the numpy, json, pyspark, csv, nltk, spacy, scipy, and sklearn for which cells are included to import and download the language model data. The Yelp data is read from a mounted Google Drive folder (which requires a Google authorization code to access) to which the notebooks in the /data_prep directory will have saved the appropriate reviews_sk json object for Spark import. The filepaths may need to be adjusted to reflect the file structure on your Drive.
 ### Content-Based Filtering for Recommending Restaurants
 This code in dependent on properly installed and imported numpy, pandas, json, pyspark, and sklearn. We include cells to install the proper version of pyspark and download the Yelp Data required to work with the restaurant recommender after running the data preprocessing notebook.
 ### Collaborative Filtering with Matrix Factorization for Recommending Buddies
@@ -32,6 +35,7 @@ The visualization package is set up so that you can run everything directly out 
 
 ## EXECUTION (How to run a demo on your code)
 ### NLP
+The two sections of cells following the initial data and import automatically handle the grouping and concatenation of reviews, constituency parsing task, word embeddings, and cosine similarity computations and saves these outputs of user similarities with a specific user with format {user_id : similarity} and top n hotwords as {business_id : list of hotword strings} as json objects in the mounted Drive folder. 
 ### Content-Based Filtering for Recommending Restaurants
 Running the notebook as is will produce a json of containing the best rated restaurants, recommended business ids for restaurants similiar to the best rated restaurants, and scores for each of the recommendations for each of the users in the user list. The user list can be modified in the final cell. The generated json has the following format {user_id : {best_rated_restaurants : list of id strings, recommended_business_id : list of id strings, scores : list floats}}.
 ### Collaborative Filtering with Matrix Factorization for Recommending Buddies
