@@ -32,13 +32,15 @@ This code is dependant on the numpy, json, pyspark, csv, nltk, spacy, scipy, and
 ### Content-Based Filtering for Recommending Restaurants
 This code in dependent on properly installed and imported numpy, pandas, json, pyspark, and sklearn. We include cells to install the proper version of pyspark and download the Yelp Data required to work with the restaurant recommender after running the data preprocessing notebook.
 ### Collaborative Filtering with Matrix Factorization for Recommending Buddies
+ This code in dependent on properly installed and imported numpy, pandas, json, pyspark, and sklearn. We include cells to install the proper version of pyspark and download the Yelp Data required to work with the restaurant recommender after running the data preprocessing notebook.
+ 
 All the packages required for the tests in CF_Matching_Experiments.ipynb are imported in the first few cells. The JSON file of embeddings read in is created in the preceeding Data_Preprocessing_and_Analysis.ipynb notebook.
 ### Visualization
 The visualization package is set up so that you can run everything directly out of the box. All necessary data files and libraries are included in the /viz directory so there is not extra set up necessary. If you want to change the user data that is being visualized, you need to update the user_data directory with the outputs from the two Recommender Systems. To see this visualization in action, you will need a browser. We strongly suggest using the latest version of Chrome to get the best possible experience.
 
 ## EXECUTION (How to run a demo on your code)
 ### NLP
-The two sections of cells following the initial data and import automatically handle the grouping and concatenation of reviews, constituency parsing task, word embeddings, and cosine similarity computations and saves these outputs of user similarities with a specific user with format {user_id : similarity} and top n hotwords as {business_id : list of hotword strings} as json objects in the mounted Drive folder. 
+The two sections of cells following the initial data and import automatically handle the grouping and concatenation of reviews, constituency parsing task, word embeddings, and cosine similarity computations and saves these outputs of user similarities with a specific user with format {user_id : similarity} and top n hotwords as {business_id : list of hotword strings} as json objects in the mounted Drive folder.
 ### Content-Based Filtering for Recommending Restaurants
 Running the notebook as is will produce a json of containing the best rated restaurants, recommended business ids for restaurants similiar to the best rated restaurants, and scores for each of the recommendations for each of the users in the user list. The user list can be modified in the final cell. The generated json has the following format {user_id : {best_rated_restaurants : list of id strings, recommended_business_id : list of id strings, scores : list floats}}.
 ### Collaborative Filtering with Matrix Factorization for Recommending Buddies
